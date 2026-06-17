@@ -1,7 +1,12 @@
 package Sorting;
 
 import java.util.Arrays;
+// Best Case: O(n) (already sorted, inner loop breaks quickly)
+// Average Case: O(n²)
+// Worst Case: O(n²)
+// Space Complexity: O(1)
 
+Stability: ✅ Stable (equal elements remain in order)
 public class insertionSort {
     public static void main(String[] args) {
         int[] arr={0,-24,23,-333,223,12,2};

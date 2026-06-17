@@ -11,6 +11,7 @@ public class BinaryInMatrix {
         System.out.println(Arrays.toString(rowColSorted(mat, 37)));
     }
     //For Matrix sorteed in row wise and col wise manner
+    //TC:-O(N)
     static int[] rowColSorted(int[][] mat,int target){
         int row=0;
         int col=mat[0].length-1;

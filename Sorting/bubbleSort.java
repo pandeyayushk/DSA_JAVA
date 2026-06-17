@@ -1,7 +1,11 @@
 package Sorting;
 
 import java.util.Arrays;
-
+// Best Case: O(n) (already sorted, early exit with swapped flag)
+// Average Case: O(n²)
+// Worst Case: O(n²)
+// Space Complexity: O(1)
+// Stability: ✅ Stable (equal elements keep their relative order)
 public class bubbleSort {
     public static void main(String[] args) {
         int arr[]={1,3,2,5,8,4,5,23,4,11,0};

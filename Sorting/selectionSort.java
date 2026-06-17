@@ -1,5 +1,9 @@
 package Sorting;
-
+// Best Case: O(n²)
+// Average Case: O(n²)
+// Worst Case: O(n²)
+// Space Complexity: O(1)
+//Stability: ❌ Not stable (swapping can change relative order of equal elements)
 public class selectionSort {
     public static void main(String[] args) {
         
