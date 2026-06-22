@@ -7,7 +7,7 @@ public class bsRecursion {
         System.out.println(ans);
     }
     //This is divide and conquer recurrence as the search space  is getting divided  by a factor
-    //where as in linear recurrence it  is reduced linearly
+    //where as in linear recurrence it  is reduced.
     static int binarysearchRecursion(int arr[],int target,int s,int e){
         if(s>e){
             return -1;

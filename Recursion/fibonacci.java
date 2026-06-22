@@ -28,4 +28,12 @@ public class fibonacci {
     //by the order of their call and exit when the call is completed.
     //But in recursion we call function inside function so till the base case is hit all other function
     //call will be in stack memory.
+
+    static int fiboFormula(int n){
+         return (int)((Math.pow(((1+Math.sqrt(5))/2), n) - Math.pow(((1-Math.sqrt(5))/2), n))/Math.sqrt(5));
+    }
+    //Fibonacci formula using recurrence relation and calculating time complexity
+    //we can ignore Math.pow(((1-Math.sqrt(5))/2), n))
+    //as its less dominationg term
+    //also use it as long only
 }
