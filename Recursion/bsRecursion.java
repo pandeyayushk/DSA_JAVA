@@ -6,7 +6,7 @@ public class bsRecursion {
         int ans=binarysearchRecursion(arr, 6, 0, arr.length-1);
         System.out.println(ans);
     }
-    //This is divide and conquer recurrence as the search space  is getting divided  by a factor
+    //This is divide and conquer recurrence as the search space  is getting divided by a factor
     //where as in linear recurrence it  is reduced.
     static int binarysearchRecursion(int arr[],int target,int s,int e){
         if(s>e){
