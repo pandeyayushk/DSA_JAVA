@@ -5,6 +5,7 @@ public class reverseNum {
         System.out.println(numRev(1232));
         System.out.println(palindrome(123321));
         System.out.println(numberOfZeros(20103, 0));
+        System.out.println(numberOfZeros2(20103));
     }
     static int numRev(int n){
         return helper(n, 0);
@@ -30,5 +31,18 @@ public class reverseNum {
             a++;
         }
         return numberOfZeros(n/10, a);
+    }
+    static int numberOfZeros2(int n){
+        int a=0;
+        if(n == 0 && a == 0){
+            return 1;
+        }
+        if(n%10==n){
+            return a;
+        }
+        if(n%10==0){
+            a++;
+        }
+        return a+numberOfZeros2(n/10);
     }
 }
