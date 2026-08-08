@@ -1,4 +1,5 @@
-public static int linearSearch(int [] arr, int target){
+public class Linear {
+    public static int linearSearch(int [] arr, int target){
     if(arr==null||arr.length==0){
             throw new IllegalArgumentException("Array must not be empty");
         }   
@@ -11,3 +12,5 @@ public static int linearSearch(int [] arr, int target){
 }
 //Time complexity is O(n) and space complexity is O(1).
 //Works on  unsorted array
+    
+}

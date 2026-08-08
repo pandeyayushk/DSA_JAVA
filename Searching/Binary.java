@@ -1,4 +1,5 @@
-public int binarySearch(int[] arr, int target) {
+public class Binary {
+    public int binarySearch(int[] arr, int target) {
     if (arr == null || arr.length == 0) {
         throw new IllegalArgumentException("Array must not be empty");
     }
@@ -32,3 +33,6 @@ public int binarySearch(int[] arr, int target) {
 }
 //Time complexity is O(log n) and Space complexity is O(1)
 //Works on sorted array only
+    
+}
+
