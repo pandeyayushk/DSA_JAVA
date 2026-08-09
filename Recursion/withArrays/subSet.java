@@ -3,11 +3,11 @@ package Recursion.withArrays;
 import java.util.*;
 public class subSet {
     public static void main(String[] args) {
-        // int[] arr={1,2,3};
-        // List<List<Integer>> ans=subSetIteration(arr);
-        // for(List<Integer> s:ans){
-        //     System.out.println(s);
-        // }
+        int[] arr={1,2,3};
+        List<List<Integer>> ans=subSetIteration(arr);
+        for(List<Integer> s:ans){
+            System.out.println(s);
+        }
         int[] array={2,1,2};
         List<List<Integer>> soln=subSetIterationDuplicates(array);
         for(List<Integer> s:soln){

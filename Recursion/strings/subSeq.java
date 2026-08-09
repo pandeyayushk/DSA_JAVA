@@ -1,5 +1,5 @@
 package Recursion.strings;
-
+import java.util.List;
 import java.util.ArrayList;
 
 public class subSeq {
@@ -9,6 +9,10 @@ public class subSeq {
         System.out.println(soln);
         subSequenceAsci("abc","");
         System.out.println(subSequenceAsciRet("abc", ""));
+        List<List<String>> ans=subSeqIteration("abc");
+        for(List<String> s:ans){
+            System.out.println(s);
+        }
     }
     static void subSequence(String original,String ans){
         if(original.isEmpty()){
@@ -58,5 +62,19 @@ public class subSeq {
         list.addAll(right);
         list.addAll(asci);
         return list;
+    }
+
+    static List<List<String>> subSeqIteration(String arr){
+        List<List<String>> outer=new ArrayList<>();
+        outer.add(new ArrayList<>());
+        for (int i=0;i<arr.length();i++) {
+            int length=outer.size();
+            for (int j = 0; j < length; j++) {
+                List<String> inner=new ArrayList<>(outer.get(j));
+                inner.add(String.valueOf(arr.charAt(i)));
+                outer.add(inner);
+            }
+        }
+        return outer;
     }
 }
