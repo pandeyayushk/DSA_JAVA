@@ -137,4 +137,30 @@ public class ll<T>{
     public int getSize(){
         return this.size;
     }
+
+    public Node getHead(){
+        return head;
+    }
+    public void setHead(Node ptr){
+        head=ptr;
+    }
+
+    public void insertRec(T value,int index,Node ptr){
+        if(index==1){
+            Node node=new Node(value,ptr.next);
+            ptr.next=node;
+            size++;
+            return;
+        }
+        insertRec(value, index-1, ptr.next);
+    }
+    public Node insertRecRet(T val,int index,Node ptr){
+        if(index==0){
+            Node node=new Node(val,ptr);
+            size++;
+            return node;
+        }
+        ptr.next= insertRecRet(val, index-1, ptr.next);
+        return ptr;
+    }
 }
