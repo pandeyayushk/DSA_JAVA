@@ -16,13 +16,22 @@ public class game {
             System.out.println("player "+player+" turn:");
             row=sc.nextInt();
             col=sc.nextInt();
+            if(row < 0 || row >= 3 || col < 0 || col >= 3){
+                System.out.println("Invalid position. Try again.");
+                continue;
+            }
             if(board[row][col]!=' '){
                 System.out.println("Invalid move");
             }else{
                 board[row][col]=player;
                 hasWon=checkWinner(player,board);
                 if(hasWon){
+                    printBoard(board);
                     System.out.println("Player "+player+" has won.");
+                }else if(isFull(board)){
+                    System.out.println("Its a draw");
+                    printBoard(board);
+                    break;
                 }
                 else{
                     player=(player=='X')?'O':'X';
@@ -64,5 +73,15 @@ public class game {
             }
             System.out.println();
         }
+    }
+    private static boolean isFull(char[][] board){
+        for(int i=0;i<board.length;i++){
+            for(int j=0;j<board.length;j++){
+                if(board[i][j]==' '){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
