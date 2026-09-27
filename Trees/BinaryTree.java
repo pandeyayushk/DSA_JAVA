@@ -71,8 +71,23 @@ public class BinaryTree {
         displayLeft(node.left);
     }
 
+    public void preetyDisplay(){
+        preetyDisplay(root,0);
+    }
+    public void preetyDisplay(Node node,int level){
+        if(node==null)return;
+        preetyDisplay(node.right,level+1);
 
-
+        if(level!=0){
+            for(int i=0;i<level-1;i++){
+                System.out.print("|\t\t");
+            }
+            System.out.println("|-------->"+node.data);
+        }else{
+            System.out.println(node.data);
+        }
+        preetyDisplay(node.left,level+1);
+    }
 
 
     public static void main(String[] args) {
@@ -80,5 +95,6 @@ public class BinaryTree {
         Scanner sc=new Scanner(System.in);
         bt.insert(sc);
         bt.display();
+        bt.preetyDisplay();
     }
 }
