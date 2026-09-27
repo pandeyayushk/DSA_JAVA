@@ -2,6 +2,8 @@ package Trees;
 
 import java.util.Scanner;
 
+import maths.prime;
+
 //To make binary search tree balanced and really usefull the height difference between any two 
 //adjacent nodes must be <=1(balanced binary tree) otherwise it at a point it will start taking 
 //O(n) to search element instead of O(log n) and this will discard an important feature of
@@ -82,7 +84,21 @@ public class BinarySearchTree {
         if(node==null) return true;
         return Math.abs(getHeight(node.left)-getHeight(node.right))<=1&&balanced(node.left)&&balanced(node.right);
     }
-
+    
+    public void insertSortedArray(int[] nums){
+        root=insertSortedArray(nums,0,nums.length-1);
+    }
+    private Node insertSortedArray(int[] nums, int start, int end){
+        if(start > end){
+            return null;
+        }
+        int mid = start + (end - start) / 2;
+        Node node = new Node(nums[mid]);
+        node.left = insertSortedArray(nums, start, mid - 1);
+        node.right = insertSortedArray(nums, mid + 1, end);
+        node.height = Math.max(getHeight(node.left), getHeight(node.right)) + 1;
+        return node;
+    }
 
     public void preetyDisplay(){
         preetyDisplay(root,0);
@@ -106,6 +122,10 @@ public class BinarySearchTree {
         BinarySearchTree bst=new BinarySearchTree();
         Scanner sc=new Scanner(System.in);
         bst.insertRootNode(sc);
+        bst.preetyDisplay();
+
+        int[] arr={1,2,3,4,5,6,7,8,9};
+        bst.insertSortedArray(arr);
         bst.preetyDisplay();
     }
 }
