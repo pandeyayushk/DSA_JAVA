@@ -10,9 +10,11 @@ public class BinarySearchTree {
     private static class Node {
         int data;
         Node left;
-        Node right;        
+        Node right;
+        int height;        
         public Node(int data){
             this.data=data;
+            this.height=1;
         }
     }
     private Node root;
@@ -54,9 +56,12 @@ public class BinarySearchTree {
         } else {
             node.left = insertElement(node.left, val);
         }
+        node.height=Math.max(getHeight(node.left), getHeight(node.right))+1;
         return node;
     }
-
+    private int getHeight(Node node){
+        return (node==null)?0:node.height;
+    }
 
     public void display(){
         Node temp=root;
@@ -70,6 +75,13 @@ public class BinarySearchTree {
         display(node.right,intendation+"\t");
     }
 
+    public boolean balanced(){
+        return balanced(root);
+    }
+    private boolean balanced(Node node){
+        if(node==null) return true;
+        return Math.abs(getHeight(node.left)-getHeight(node.right))<=1&&balanced(node.left)&&balanced(node.right);
+    }
 
 
     public void preetyDisplay(){
