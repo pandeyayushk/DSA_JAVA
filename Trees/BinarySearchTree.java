@@ -2,7 +2,7 @@ package Trees;
 
 import java.util.Scanner;
 
-import maths.prime;
+import String_Builder.sB;
 
 //To make binary search tree balanced and really usefull the height difference between any two 
 //adjacent nodes must be <=1(balanced binary tree) otherwise it at a point it will start taking 
@@ -118,6 +118,38 @@ public class BinarySearchTree {
         preetyDisplay(node.left,level+1);
     }
 
+    public void preOrder(){
+        preOrder(root);
+        System.out.println();
+    }
+    private void preOrder(Node node){
+        if(node==null)return ;
+        System.out.print(node.data+" ");
+        preOrder(node.left);
+        preOrder(node.right);
+    }
+
+    public void inOrder(){
+        inOrder(root);
+        System.out.println();
+    }
+    private void inOrder(Node node){
+        if(node==null)return;
+        inOrder(node.left);
+        System.out.print(node.data+" ");
+        inOrder(node.right);
+    }
+
+    public void postOrder(){
+        postOrder(root);
+        System.out.println();
+    }
+    private void postOrder(Node node){
+        if(node==null)return;
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.print(node.data+" ");
+    }
     public static void main(String[] args) {
         BinarySearchTree bst=new BinarySearchTree();
         Scanner sc=new Scanner(System.in);
@@ -127,5 +159,8 @@ public class BinarySearchTree {
         int[] arr={1,2,3,4,5,6,7,8,9};
         bst.insertSortedArray(arr);
         bst.preetyDisplay();
+        bst.preOrder();
+        bst.inOrder();
+        bst.postOrder();
     }
 }
